@@ -1,0 +1,1 @@
+To start the service run `npx ts-node app.ts`
