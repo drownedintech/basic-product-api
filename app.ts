@@ -1,7 +1,6 @@
 import { feathers } from '@feathersjs/feathers'
 import { koa, rest, bodyParser, errorHandler, serveStatic } from '@feathersjs/koa'
 import socketio from '@feathersjs/socketio'
-import { MessageService } from './services/message-service'
 import { ServiceTypes } from './types/service-types'
 import { ProductService } from './services/product-service'
 
@@ -20,7 +19,6 @@ app.configure(rest())
 // Configure Socket.io real-time APIs
 app.configure(socketio())
 // Register our messages service
-app.use('messages', new MessageService())
 app.use('products', new ProductService())
 
 // Add any new real-time connection to the `everybody` channel
